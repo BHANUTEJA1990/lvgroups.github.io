@@ -93,7 +93,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     message: document.getElementById("message").value
   };
 
-  fetch("https://docs.google.com/spreadsheets/d/1HnRuPGkRc8U3Z3ttBclMdY6GAGF7ObyPJEp5hWO6AUk/edit?usp=sharing", {
+  fetch("https://script.google.com/macros/s/AKfycbzPeKqFkvGRnPIjE2RmgYHDddq8ECLTVQSP3cOmfz4a9B3Mn5L52E4bVw_mBKfjHpaGTQ/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
