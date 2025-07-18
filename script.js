@@ -1,4 +1,4 @@
-document.getElementById('contactForm').addEventListener('submit', function (e) {
+/*document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
@@ -19,3 +19,19 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     formMsg.textContent = "Message opened in email app.";
     formMsg.style.color = "green";
 });
+*/
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data = JSON.parse(e.postData.contents);
+
+  sheet.appendRow([
+    new Date(),
+    data.name,
+    data.email,
+    data.message
+  ]);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ result: 'success' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
