@@ -19,7 +19,7 @@
     formMsg.textContent = "Message opened in email app.";
     formMsg.style.color = "green";
 });
-*/
+
 function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var data = JSON.parse(e.postData.contents);
@@ -35,6 +35,7 @@ function doPost(e) {
     .createTextOutput(JSON.stringify({ result: 'success' }))
     .setMimeType(ContentService.MimeType.JSON);
 }
+*/
 
 function sendMail(){
     let parms ={
@@ -46,6 +47,7 @@ function sendMail(){
     emailjs.send("service_ccm68eg","template_xg5u5ou",parms).then(alert("Email sent"))
 }
     
+
 
 
 
