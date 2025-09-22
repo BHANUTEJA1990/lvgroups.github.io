@@ -35,3 +35,32 @@ function doPost(e) {
     .createTextOutput(JSON.stringify({ result: 'success' }))
     .setMimeType(ContentService.MimeType.JSON);
 }
+
+function sendMail(){
+    let parms ={
+        name:document.getElementById("name").value,
+        email:document.getElementById("email").value,
+        subject:document.getElementById("subject").value,
+        message:document.getElementById("message").value
+    }
+    emailjs.send("service_ccm68eg","template_xg5u5ou",parms).then(alert("Email sent"))
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
